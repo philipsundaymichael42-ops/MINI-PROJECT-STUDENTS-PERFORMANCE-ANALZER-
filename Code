@@ -1,0 +1,47 @@
+print("===== STUDENT PERFORMANCE ANALYZER =====\n")
+
+# Collect student information
+student_name = input("Enter student name: ")
+student_age = int(input("Enter student age: ")) # Type casting to int
+department = input("Enter department: ")
+
+# Collect scores
+score_math = float(input("Enter score for Mathematics: ")) # Type casting to float
+score_python = float(input("Enter score for Python: "))
+score_statistics = float(input("Enter score for Statistics: "))
+
+# Create a list of scores for easy calculation of max/min
+scores = [score_math, score_python, score_statistics]
+
+# Calculate total score using arithmetic operator '+'
+total_score = score_math + score_python + score_statistics
+
+# Calculate average score using arithmetic operator '/'
+average_score = total_score / len(scores)
+
+# Find highest and lowest scores
+highest_score = max(scores)
+lowest_score = min(scores)
+
+# Determine pass/fail status
+
+# Option 1: Assuming a pass if all scores are 50 or above
+# passed = bool(score_math >= 50 and score_python >= 50 and score_statistics >= 50) # Using comparison operators and bool type
+
+# Option 2: Assuming a pass if the average score is 50 or above
+passed = bool(average_score >= 50) # Using comparison operators and bool type
+
+# Print the results in the specified format
+print(f"\nName: {student_name}")
+print(f"Age: {student_age}")
+print(f"Department: {department}")
+
+print(f"\nMathematics: {int(score_math)}") # Printing as int for output format
+print(f"Python: {int(score_python)}")
+print(f"Statistics: {int(score_statistics)}")
+
+print(f"\nTotal Score: {int(total_score)}") # Printing as int for output format
+print(f"Average Score: {average_score:.1f}") # Format to one decimal place
+print(f"Highest Score: {int(highest_score)}")
+print(f"Lowest Score: {int(lowest_score)}")
+print(f"Passed: {passed}")
